@@ -26,6 +26,6 @@ public class PedidoModel {
     @JoinColumn(name = "id_Pessoa")
     private PessoaModel pessoa;
 
-    @OneToMany
+    @OneToMany(mappedBy = "pedido")
     private List<ItemModel> item;
 }
