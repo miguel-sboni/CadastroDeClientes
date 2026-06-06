@@ -31,4 +31,16 @@ public class PessoaController {
     public PessoaModel cadastrarPessoas(@RequestBody PessoaModel pessoa){
         return pessoaService.cadastrarPessoas(pessoa);
     }
+
+    @DeleteMapping("/Deletar/{id}")
+    public void deletarPessoas(@PathVariable Long id){
+        pessoaService.deletarPessoas(id);
+    }
+
+    @PutMapping("/Atualizar/{id}")
+    public PessoaModel atualizarPessoas(@PathVariable Long id, @RequestBody PessoaModel pessoa){
+        return pessoaService.atualizarPessoas(id, pessoa);
+    }
+
+
 }

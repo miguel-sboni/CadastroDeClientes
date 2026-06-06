@@ -27,5 +27,19 @@ public class PessoaService {
         return pessoaRepository.save(pessoa);
     }
 
+    public void deletarPessoas(Long id){
+        pessoaRepository.deleteById(id);
+    }
+
+    public PessoaModel atualizarPessoas(Long id, PessoaModel pessoa){
+        if(pessoaRepository.existsById(id)){
+            pessoa.setId(id);
+            return pessoaRepository.save(pessoa);
+        }
+        else {
+            return null;
+        }
+    }
+
 
 }
