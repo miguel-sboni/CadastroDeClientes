@@ -18,17 +18,17 @@ public class PessoaController {
 
 
     @GetMapping("/Pessoas")
-    public List<PessoaModel> listarPessoas(){
+    public List<PessoaDTO> listarPessoas(){
        return pessoaService.listarPessoas();
     }
 
     @GetMapping("/Pessoas/{id}")
-    public PessoaModel buscarPessoaPorId(@PathVariable Long id){
+    public PessoaDTO buscarPessoaPorId(@PathVariable Long id){
         return pessoaService.listarPessoasId(id);
     }
 
     @PostMapping("/CadastrarPessoas")
-    public PessoaModel cadastrarPessoas(@RequestBody PessoaModel pessoa){
+    public PessoaDTO cadastrarPessoas(@RequestBody PessoaDTO pessoa){
         return pessoaService.cadastrarPessoas(pessoa);
     }
 
@@ -38,9 +38,7 @@ public class PessoaController {
     }
 
     @PutMapping("/Atualizar/{id}")
-    public PessoaModel atualizarPessoas(@PathVariable Long id, @RequestBody PessoaModel pessoa){
+    public PessoaDTO atualizarPessoas(@PathVariable Long id, @RequestBody PessoaDTO pessoa){
         return pessoaService.atualizarPessoas(id, pessoa);
     }
-
-
 }
